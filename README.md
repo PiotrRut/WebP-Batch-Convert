@@ -7,7 +7,7 @@ I had two reasons for writing this piece of code:
 - Google's `cwebp` command only lets you compress and convert one file at a time, which is often very tedious with a larger set of files.
 - I could've done this very easily in Python, but where's the fun in that? I wanted to learn shell, and what better way to do it than by solving a problem I have just created 🙌🏼
 
-You need the `webp` formula installed through Homebrew to use this script. Alternatively, you can download and run the `cwebp` excutable, which this program can automatically download and configure for you, should you desire. It can also be manually downloaded for your OS from [here](https://storage.googleapis.com/downloads.webmproject.org/releases/webp/index.html).
+You need the `webp` formula installed through Homebrew to use this script. Alternatively, you can download and run the `cwebp` excutable, which this program can automatically download and configure for you, should you desire. It can also be manually downloaded for your OS from [here](https://storage.googleapis.com/downloads.webmproject.org/releases/webp/index.html) - the latest version is `1.1.0`.
 
 The images are being compressed with a hardcoded factor of 80 - meaning the output file will be 80% its original quality. This can be changed by modyfying the value after the `-q` option in the `cwebp` command. For all available options, visit [Google's docs](https://developers.google.com/speed/webp/docs/cwebp)!
 
