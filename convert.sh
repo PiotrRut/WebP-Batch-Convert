@@ -8,7 +8,7 @@ case "$an1" in
         echo " "
         read -p "Where are your images located? Provide folder: " dir
         for file in "$dir"/*; do
-            ## strip the file name of the path and extension
+            # Strip the file name of the path and extension
             ext=${file##*.}
             fname=`basename $file .$ext`
             cwebp -q 80 $file -o $fname".webp"
