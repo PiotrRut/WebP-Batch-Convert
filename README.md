@@ -1,7 +1,5 @@
 # Batch WebP Converter
 
-🚨 **This script is only to be run on machines running macOS or Linux!!**
-
 I had two reasons for writing this piece of code:
 
 - Google's `cwebp` command only lets you compress and convert one file at a time, which is often very tedious with a larger set of files.
@@ -11,7 +9,7 @@ You need the `webp` formula installed through Homebrew to use this script. Alter
 
 The images are being compressed with a hardcoded factor of 80 - meaning the output file will be 80% its original quality. This can be changed by modyfying the value after the `-q` option in the `cwebp` command. For all available options, visit [Google's docs](https://developers.google.com/speed/webp/docs/cwebp)!
 
-## Usage 👨🏻‍💻
+## Usage - Bash/Zsh 👨🏻‍💻
 
 First, make the file executable by running
 
@@ -42,8 +40,23 @@ Converted WebP files will be put in the script's working directory
 └── file2.webp
 ```
 
+## Usage - PowerShell 👨🏻‍💻
+
+```PowerShell
+    ConvertTo-Webp.ps1 [-downloadLibWebp] [[-compressionFactor] <Int32>] [-directory] <String> [<CommonParameters>]
+```
+
+The script takes a switch (`-downloadLibWebp`) that enables the download of the cwebp binary if it isn't already installed and on the system path, otherwise it will just try to call the system's copy. It will run this executable over every file in `-directory`. The output file format is the same as the Bash/Zsh version.
+
+`-compressionFactor` is defaulted to 80 but can be overridden.
+
+For a full Comment-Based Help output, run:
+
+```PowerShell
+    Get-Help ./ConvertTo-Webp.ps1 -Full
+```
+
 ## Ideas for the future 🚩
 
 - Let users pass `args` which will be passed to the `cwebp` command
-- Support Windows
 - Learn more shell and have a nicer code
