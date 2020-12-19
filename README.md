@@ -50,6 +50,8 @@ ConvertTo-Webp.ps1 [-downloadLibWebp] [[-compressionFactor] <Int32>] [-directory
 
 The script takes a switch (`-downloadLibWebp`) that enables the download of the cwebp binary if it isn't already installed and on the system path, otherwise it will just try to call the system's copy. It will run this executable over every file in `-directory`. The output file format is the same as the Bash/Zsh version.
 
+`-compressionFactor` is defaulted to 80 but can be overridden.
+
 For a full Comment-Based Help output, run:
 
 ```PowerShell
