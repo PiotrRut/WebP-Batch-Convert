@@ -42,6 +42,8 @@ Converted WebP files will be put in the script's working directory
 
 ## Usage - PowerShell 👨🏻‍💻
 
+_Credit to [Reece Mercer](https://github.com/Reeceeboii) for helping with the PowerShell solution!_
+
 ```PowerShell
     ConvertTo-Webp.ps1 [-downloadLibWebp] [[-compressionFactor] <Int32>] [-directory] <String> [<CommonParameters>]
 ```
@@ -55,8 +57,3 @@ For a full Comment-Based Help output, run:
 ```PowerShell
     Get-Help ./ConvertTo-Webp.ps1 -Full
 ```
-
-## Ideas for the future 🚩
-
-- Let users pass `args` which will be passed to the `cwebp` command
-- Learn more shell and have a nicer code
