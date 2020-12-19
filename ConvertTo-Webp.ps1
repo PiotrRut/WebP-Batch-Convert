@@ -44,14 +44,16 @@ param (
     [string]$directory
 )
 
-$download = "https://storage.googleapis.com/downloads.webmproject.org/releases/webp/libwebp-1.1.0-windows-x64.zip"
+# What version of cwebp binaries do we want?
+$version = "1.1.0"
+$download = "https://storage.googleapis.com/downloads.webmproject.org/releases/webp/libwebp-$version-windows-x64.zip"
 
 if ($downloadLibWebp) {
     Invoke-WebRequest $download -OutFile ./libwebp.zip; if ($?) { Expand-Archive ./libwebp.zip -DestinationPath ./libwebp -Force }
     Remove-Item ./libwebp.zip
     if (Test-Path $directory) {
         Get-ChildItem $directory | ForEach-Object {
-            & ".\libwebp\libwebp-1.1.0-windows-x64\bin\cwebp.exe" -q $compressionFactor $_.FullName -o "$($_.Name).webp"
+            & ".\libwebp\libwebp-$version-windows-x64\bin\cwebp.exe" -q $compressionFactor $_.FullName -o "$($_.Name).webp"
         }
     }
 }
@@ -62,3 +64,5 @@ else {
         }
     }
 }
+
+Remove-Item -Recurse ./libwebp -Force
