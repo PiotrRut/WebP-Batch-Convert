@@ -2,7 +2,7 @@
 # and convert them to WebP format using google's cwebp lib.
 # For now compression rate is hardcoded to 80..
 
-read -n1 -p "Welcome. This program requires the webp package to be installed. Do you have it installed? [Y/N] " an1
+read -n1 -p "Hey there. This program requires the webp package to be installed. Do you have it? [Y/N] " an1
 case "$an1" in
     y|Y)
         echo " "
@@ -45,16 +45,16 @@ case "$an1" in
                 done
                 ;;
             n|N)
-                echo "Please install the webp package before continuing!"
+                echo "\nPlease install the webp package before continuing!"
                 exit
                 ;;
             *)
-                echo "You have provided incorrect input"
+                echo "\nPleasee provide a 'Y' (for yes) or 'N' (for no)."
                 ;;
         esac
         ;;
     *)
-        echo "You have provided incorrect input"
+        echo "\nPleasee provide a 'Y' (for yes) or 'N' (for no)."
         ;;  
 esac
 
