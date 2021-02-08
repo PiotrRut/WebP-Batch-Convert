@@ -7,7 +7,7 @@ I had two reasons for writing this piece of code:
 
 You need the `webp` formula installed through Homebrew to use this script. Alternatively, you can download and run the `cwebp` excutable, which this program can automatically download and configure for you, should you desire. It can also be manually downloaded for your OS from [here](https://storage.googleapis.com/downloads.webmproject.org/releases/webp/index.html) - the latest version is `1.1.0`.
 
-The images are being compressed with a **hardcoded factor of 80** - meaning the output file will be 80% its original quality. This can be changed by modyfying the value after the `-q` option in the `cwebp` command. For all available options, visit [Google's docs](https://developers.google.com/speed/webp/docs/cwebp).
+For all available options, visit [Google's docs](https://developers.google.com/speed/webp/docs/cwebp).
 
 ## Usage - Bash/Zsh 👨🏻‍💻
 
@@ -23,7 +23,7 @@ Then, run the scrip in current working directory
 ~WebP-Batch-Converter $ ./convert.sh
 ```
 
-After going through the installation process (should you not have `webp` installed on your machine already), you will be asked to provide an input directory with all your image files.
+After going through the installation process (should you not have `webp` installed on your machine already), you will be asked to provide an input directory with all your image files. You will also be asked to provide a compression factor.
 
 ```bash
 # This will take folder named "files" located in the same working directory
